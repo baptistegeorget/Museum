@@ -1,27 +1,6 @@
-.container {
-    background-color: #2b2b2b ;
-    height :100px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.logo_container{
-    margin-right: auto;
-    margin-left:30px;
-    display:flex;
-    font-family: 'Roboto', serif;
-    font-size: 1px;
-    align-items: center;
-    color: white;
-}
-
-.button_container{
-    margin-right:30px;
-    margin-left:auto;
-}
-button {
-    padding: 1.3em 3em;
+.button {
+    margin-right: 30px;
+    padding: 1.2em 2.7em;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -34,6 +13,20 @@ button {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+
+}
+@media (max-width:767px){
+    .button{
+        font-size:9px;
+        padding: 8px 6px;
+        margin-right:10px
+    }
+}
+
+@media (max-width:767px){
+    img{
+        width:70px;
+    }
 }
 
 button:hover {
