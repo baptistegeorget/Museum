@@ -1,4 +1,3 @@
-import './App.css';
 import {useEffect, useState} from "react";
 import {Header} from "./components/Header";
 import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
