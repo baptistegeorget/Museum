@@ -1,23 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import {Search} from "react-bootstrap-icons";
-import style from "./style.module.css"
 
-export function Searchbar() {
+export function Searchbar(props) {
 
-    const submit = (input) => {
-        if (input.key === "Enter" && input.target.value !== "") {
-
+    const submit = (e) => {
+        if (e.key === "Enter" && e.target.value !== "") {
+            props.search(e.target.value)
         }
     }
 
     return (
-        <form className="row align-items-center" >
+        <div className="row align-items-center" >
             <div className="col-auto">
-                <input className="form-control border-secondary rounded-pill" type="search" placeholder="Search any arts.." onKeyUp={submit} style={{width:"28vh"}} />
+                <input className="form-control border-secondary rounded-pill" type="text" placeholder="Search any arts.." onKeyUp={submit} style={{width:"28vh"}} />
             </div>
             <div className="col-auto">
                 <Search color="white" fontSize="1.5em"/>
             </div>
-        </form>
+        </div>
     )
 }
