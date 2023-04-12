@@ -2,12 +2,13 @@ import {useEffect, useState} from "react";
 import {Header} from "./components/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {OBJECT_URL, SEARCH_URL} from "./config";
+import {Details} from "./components/Details";
 
 function App() {
 
     const [objects, setObjects] = useState([])
 
-    useEffect(() => search(), [])
+    useEffect(() => search("mona lisa"), [])
 
     const search = (value = "", limit = 10, departmentId = Infinity, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity, hasImages = false) => {
         let results = [];
@@ -47,7 +48,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Header search={search}/>}>
                     <Route path="advanced-search" element={<p>Search</p>}/>
-                    <Route path="details" element={<p>details</p>}/>
+                    <Route path="details/:id" element={<Details/>}/>
                 </Route>
                 <Route path="*" element={<p>NOT FOUND</p>}/>
             </Routes>
