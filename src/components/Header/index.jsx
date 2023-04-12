@@ -5,22 +5,22 @@ import {Searchbar} from "../Searchbar";
 
 export function Header() {
     return (
-        <div style={{backgroundColor: "#2b2b2b", height: "18vh"}} className="row  col-auto align-items-center">
-                    <div className="col-md-3 col-12 d-flex justify-content-center">
-                        <a href="/"> <img src="/logo-musée.jpeg" alt="logo du site" width="100"/></a>
-                    </div>
-                    <div className="col-md-6 col-9 d-flex justify-content-center">
+        <>
+            <div style={{backgroundColor: "#2b2b2b", height: "18vh"}} className="row  col-auto align-items-center">
+                <div className="col-md-3 col-12 d-flex justify-content-center">
+                    <a href="/"> <img src="/logo-musée.jpeg" alt="logo du site" width="100"/></a>
+                </div>
+                <div className="col-md-6 col-9 d-flex justify-content-center">
 
-                        <Searchbar/>
-                    </div>
-                    <div className="col-md-3 col-3 d-flex justify-content-center">
-                        <a href="/advanced-search">
-                            <button className={style.button}>Advanced Search</button>
-                        </a>
-                    </div>
-
-
+                    <Searchbar/>
+                </div>
+                <div className="col-md-3 col-3 d-flex justify-content-center">
+                    <a href="/advanced-search">
+                        <button className={style.button}>Advanced Search</button>
+                    </a>
+                </div>
+            </div>
             <Outlet/>
-        </div>
+        </>
     )
 }
