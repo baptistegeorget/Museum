@@ -5,12 +5,9 @@ import {BrowserRouter, Outlet, Route, Routes} from "react-router-dom";
 function App() {
 
     const [objects, setObjects] = useState([])
-    const day = new Date().getDate()
-    const month = new Date().getMonth()
-    const year = new Date().getFullYear()
 
     useEffect(() => {
-        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects?metadataDate=${year}-${month}-${day}`)
+        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects`)
             .then((response) => response.json())
             .then((data) => setObjects(data))
     }, [])
