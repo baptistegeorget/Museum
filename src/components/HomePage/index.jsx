@@ -1,12 +1,16 @@
 import {List} from "../List";
+import {useEffect,} from "react";
 
-export function HomePage({objects}) {
+export function HomePage(props) {
+
+    useEffect(() => {
+        props.search("mona", 10, Infinity, "", Infinity, Infinity, true)
+    }, [])
 
     return (
-        <>
-            <h1>KJHG</h1>
-            <List objects={objects}/>
-        </>
-
+        <div>
+            <h1>Nos recommandations :</h1>
+            <List objectsID={props.objectsID}/>
+        </div>
     )
 }

@@ -3,6 +3,8 @@ import style from "./style.module.css"
 import {Searchbar} from "../Searchbar";
 
 export function Header(props) {
+
+
     return (
         <>
             <div style={{backgroundColor: "#2b2b2b", height: "18vh"}} className="row  col-auto align-items-center">
