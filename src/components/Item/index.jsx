@@ -1,17 +1,20 @@
 import style from "./style.module.css"
 
-export function Item({objects}){
+export function Item({object}) {
+
+
+
     return (
         <>
-        <div className={style.container}    >
-            <img
-                alt={objects.title}
-                className={style.img}
-                src={objects?.primaryImageSmall}>
-            </img>
-            <div className={style.title}>
-                {objects.title}
+            <div className={style.container}>
+                <img
+                    alt={object?.title}
+                    className={style.img}
+                    src={object?.primaryImageSmall}>
+                </img>
+                <div className={style.title}>
+                    {object?.title}
+                </div>
             </div>
-        </div>
-    </>)
+        </>)
 }

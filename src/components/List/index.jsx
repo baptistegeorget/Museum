@@ -1,20 +1,24 @@
 import s from "./style.module.css"
 import {Item} from "../Item";
-export function List({objectsList}){
-    return( <>
+import {useEffect} from "react";
 
-        <div className={s.list}>
-            {objectsList.map((objects)=>{
-                return(
-                    <span className={s.item}>
-                        <Item objects={objects} />
+export function List({objects}) {
+
+    useEffect(() => {
+    }, []);
+
+    return (
+        <>
+            <div className={s.list}>
+                {objects?.map((object) => {
+                    console.log(object)
+                    return (
+                        <span className={s.item}>
+                        <Item object={object}/>
                     </span>
-                )
-
-            })}
-        </div>
-
-    </>
-
+                    )
+                })}
+            </div>
+        </>
     )
 }
