@@ -53,7 +53,7 @@ function App() {
                 <Route path="/" element={<Header search={search}/>}>
                     <Route path="/home" element={<HomePage search={search} />}/>
                     <Route path="advanced-search" element={<p>Search</p>}/>
-                    <Route path="details" element={<p>details</p>}/>
+                    <Route path="details/:id" element={<Details/>}/>
                 </Route>
                 <Route path="*" element={<Error/>}/>
             </Routes>
