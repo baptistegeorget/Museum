@@ -2,7 +2,6 @@ import {Outlet} from "react-router-dom";
 import style from "./style.module.css"
 import {Searchbar} from "../Searchbar";
 
-
 export function Header(props) {
     return (
         <>

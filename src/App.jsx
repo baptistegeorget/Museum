@@ -1,16 +1,14 @@
-import {useEffect, useState} from "react";
 import {Header} from "./components/Header";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {OBJECT_URL, SEARCH_URL} from "./config";
-import {List} from "./components/List";
 import {HomePage} from "./components/HomePage";
 import {Error} from "./components/Error";
+import {Details} from "./components/Details";
+import {useState} from "react";
 
 function App() {
 
-
-
-
+    const [resultSearch, setResultSearch] = useState([])
 
     const search = (value = "", limit = 10, departmentId = Infinity, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity, hasImages = false) => {
         let results = [];
@@ -39,19 +37,17 @@ function App() {
                             .then((response) => response.json())
                             .then((data) => results.push(data))
                     }
-
                 }
             })
+        setResultSearch(results)
         return results
     }
-
-
 
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Header search={search}/>}>
-                    <Route path="/home" element={<HomePage search={search} />}/>
+                    <Route path="/" element={<HomePage search={search} />}/>
                     <Route path="advanced-search" element={<p>Search</p>}/>
                     <Route path="details/:id" element={<Details/>}/>
                 </Route>

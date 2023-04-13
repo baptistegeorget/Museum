@@ -11,31 +11,34 @@ export function Details() {
     useEffect(() => {
         fetch(`${OBJECT_URL}${params.id}`)
             .then((response) => response.json())
-            .then((data) => setObject(data))
+            .then((data) => {
+                setObject(data)
+            })
     }, [])
 
     const displayArtist = () => {
         if (object?.artistDisplayName) {
             return (
                 <>
-                    <h3>{object?.artistDisplayName} {object?.artistBeginDate}-{object?.artistEndDate}</h3>
-                    <em>{object?.artistNationality}</em>
-                    <p>{object?.artistDisplayBio}</p>
+                    <p><b>Artist : </b>{object?.artistDisplayName} {object?.artistBeginDate}-{object?.artistEndDate} <em className="text-muted">{object?.artistNationality}</em></p>
                 </>
             )
         }
     }
-
+    console.log(object)
     return (
-        <div className="row">
-            <img className="" alt="image" src={`${object?.primaryImage}`}/>
-            <div className="">
-                <h2>{object?.title}</h2>
+        <div className="row" style={{marginTop: "10vh", marginBottom: "10vh", marginLeft: "16vw", marginRight: "16vw"}}>
+            <div className="col-6">
+                <img className="col-12 rounded" alt={object?.title} src={`${object?.primaryImage}`}/>
+            </div>
+            <div className="col-1"/>
+            <div className="col-5">
+                <h2 className="h2">{object?.title}</h2>
                 <p>{object?.creditLine}</p>
-                <p>Date : {object?.objectDate}</p>
+                <p><b>Date : </b>{object?.objectDate}</p>
                 {displayArtist()}
-                <div>
-                    <p>{object?.department}</p>
+                <div className="rounded-pill d-inline-block bg-black">
+                    <p className="text-white mb-0 p-2 ps-4 pe-4">{object?.department}</p>
                 </div>
             </div>
         </div>
