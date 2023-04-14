@@ -11,6 +11,7 @@ export function Item({objectID}) {
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
+                    console.log(data)
                     setObject(data)
                 }
             })
@@ -20,12 +21,12 @@ export function Item({objectID}) {
         <>
             <div className={style.container}>
                 <img
-                    alt={objectID?.title}
+                    alt={object?.title}
                     className={style.img}
-                    src={objectID?.primaryImageSmall}>
+                    src={object?.primaryImageSmall}>
                 </img>
                 <div className={style.title}>
-                    {objectID?.title}
+                    {object?.title}
                 </div>
             </div>
         </>)

@@ -4,15 +4,11 @@ import {SEARCH_URL} from "./config";
 import {HomePage} from "./components/HomePage";
 import {Error} from "./components/Error";
 import {Details} from "./components/Details";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 function App() {
 
-    const [objectsID, setObjectsID] = useState(null)
-
-    useEffect(() => {
-        search("cup")
-    }, [])
+    const [objectsID, setObjectsID] = useState()
 
     const search = (value = "", limit = 10, departmentId = Infinity, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity, hasImages = false) => {
         let results = []
