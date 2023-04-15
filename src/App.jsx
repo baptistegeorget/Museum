@@ -11,7 +11,6 @@ function App() {
     const [objectsID, setObjectsID] = useState()
 
     const search = (value = "", limit = 10, departmentId = Infinity, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity, hasImages = false) => {
-        let results = []
         let parameters = `?q=${value}`
         if (departmentId !== Infinity) {
             parameters += `&departmentId=${departmentId}`
@@ -32,13 +31,11 @@ function App() {
             .then((response) => response.json())
             .then((data) => {
                 if (data.objectIDs) {
-                    //let temp = data.objectIDs
-                    //let results = []
-                    //for (let i = 0; i < limit; i++) {
-                    //    temp.push(temp[i])
-                    //}
-                    //setObjectsID(results)
-                    setObjectsID(data.objectIDs)
+                    let temp = []
+                    for (let i = 0; i < limit; i ++) {
+                        temp.push(data.objectIDs[i])
+                    }
+                    setObjectsID(temp)
                 }
             })
     }

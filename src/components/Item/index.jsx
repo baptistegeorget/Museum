@@ -11,7 +11,6 @@ export function Item({objectID}) {
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
-                    console.log(data)
                     setObject(data)
                 }
             })

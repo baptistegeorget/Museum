@@ -4,7 +4,7 @@ import {useEffect,} from "react";
 export function HomePage(props) {
 
     useEffect(() => {
-        props.search("mona", 10, Infinity, "", Infinity, Infinity, true)
+        props.search(" ", 10, Infinity, "Paris", Infinity, Infinity, true)
     }, [])
 
     return (
