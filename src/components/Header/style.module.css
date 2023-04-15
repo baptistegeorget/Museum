@@ -1,6 +1,6 @@
 .button {
-    margin-right: 30px;
-    padding: 1.2em 2.7em;
+    margin: 1em;
+    padding: 1.2em 2em;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -15,10 +15,10 @@
     outline: none;
 
 }
+
 @media (max-width:767px){
     .button{
         font-size:9px;
-        padding: 8px 6px;
         margin-right:10px
     }
 }

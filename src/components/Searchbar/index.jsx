@@ -10,13 +10,11 @@ export function Searchbar(props) {
     }
 
     return (
-        <div className="container row align-items-center" >
+        <div className="row align-items-center" >
             <div className="col-10">
-                <input className="w-100 form-control border-secondary rounded-pill" type="text" placeholder="Search any arts.." onKeyUp={submit} style={{width:"28vh"}} />
+                <input className="w-100 form-control border-secondary rounded-pill" type="text" placeholder="Search any arts.." onKeyUp={submit}/>
             </div>
-            <div className="col-2">
-                <Search color="black" fontSize="1.5em" style={{marginLeft: "-3em"}}/>
-            </div>
+            <Search color="white" fontSize="1.5em" className="col-2"/>
         </div>
     )
 }
