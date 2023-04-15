@@ -9,7 +9,7 @@ export function HomePage(props) {
 
     return (
         <div>
-            <h1>Nos recommandations :</h1>
+            <h1 style={{ fontFamily: 'Bradley Hand, Ariel', fontSize: '2.5em' }}>Nos recommandations :</h1>
             <List objectsID={props.objectsID}/>
         </div>
     )
