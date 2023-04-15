@@ -2,6 +2,8 @@ import {useParams} from "react-router-dom";
 import {OBJECT_URL} from "../../config";
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import style from "../Header/style.module.css";
+
 
 export function Details() {
 
@@ -27,20 +29,28 @@ export function Details() {
     }
     console.log(object)
     return (
-        <div className="row" style={{marginTop: "10vh", marginBottom: "10vh", marginLeft: "16vw", marginRight: "16vw"}}>
-            <div className="col-6">
-                <img className="col-12 rounded" alt={object?.title} src={`${object?.primaryImage}`}/>
-            </div>
-            <div className="col-1"/>
-            <div className="col-5">
-                <h2 className="h2">{object?.title}</h2>
-                <p>{object?.creditLine}</p>
-                <p><b>Date : </b>{object?.objectDate}</p>
-                {displayArtist()}
-                <div className="rounded-pill d-inline-block bg-black">
-                    <p className="text-white mb-0 p-2 ps-4 pe-4">{object?.department}</p>
+        <div className="container-fluid" style={{marginTop: "7vh"}}>
+            <div className="row">
+                <div className="col-md-6">
+                    <img w className="col-12 rounded" alt={object?.title} src={`${object?.primaryImage}`}/>
+                </div>
+                <div className="col-md-1"></div>
+                <div className="col-md-5">
+                    <h2 style={{fontSize:"3em"}}>{object?.title}</h2>
+                    <p>{object?.creditLine}</p>
+                    <p><b>Date : </b>{object?.objectDate}</p>
+                    {displayArtist()}
+                    <div className="rounded-pill d-inline-block bg-black">
+                        <p className="text-white mb-0 p-2 ps-4 pe-4">{object?.department}</p>
+                    </div>
+                    <div className="mt-2">
+                        <a href={object?.objectWikidata_URL} target="_blank">
+                            <p>En savoir plus</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
