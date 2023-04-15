@@ -10,11 +10,8 @@ function App() {
 
     const [objectsID, setObjectsID] = useState()
 
-    const search = (value = "", limit = 10, departmentId = Infinity, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity, hasImages = false) => {
+    const search = (value = "", limit = 10, geoLocation = "", dateBegin = Infinity, dateEnd = Infinity) => {
         let parameters = `?q=${value}`
-        if (departmentId !== Infinity) {
-            parameters += `&departmentId=${departmentId}`
-        }
         if (geoLocation !== "") {
             parameters += `&geoLocation=${geoLocation}`
         }
@@ -24,9 +21,7 @@ function App() {
         if (dateEnd !== Infinity) {
             parameters += `&dateEnd=${dateEnd}`
         }
-        if (hasImages) {
-            parameters += `&hasImages=true`
-        }
+        parameters += `&hasImages=true`
         fetch(`${SEARCH_URL}${parameters}`)
             .then((response) => response.json())
             .then((data) => {

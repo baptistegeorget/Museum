@@ -1,6 +1,7 @@
 .list{
     display: flex;
     overflow-x: hidden;
+    padding-bottom: 2em;
 }
 
 .list:hover{

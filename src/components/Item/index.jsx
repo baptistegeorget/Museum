@@ -1,6 +1,7 @@
 import style from "./style.module.css"
 import {OBJECT_URL} from "../../config";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 export function Item({objectID}) {
 
@@ -17,8 +18,8 @@ export function Item({objectID}) {
     }, [])
 
     return (
-        <>
-            <div className={style.container}>
+        <div className={style.container}>
+            <Link to={`/details/${objectID}`}>
                 <img
                     alt={object?.title}
                     className={style.img}
@@ -27,6 +28,7 @@ export function Item({objectID}) {
                 <div className={style.title}>
                     {object?.title}
                 </div>
-            </div>
-        </>)
+            </Link>
+        </div>
+    )
 }

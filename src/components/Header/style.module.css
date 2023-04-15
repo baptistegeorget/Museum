@@ -23,12 +23,6 @@
     }
 }
 
-@media (max-width:767px){
-    img{
-        width:70px;
-    }
-}
-
 button:hover {
     background-color: #23c483;
     box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
