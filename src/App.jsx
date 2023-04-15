@@ -5,6 +5,7 @@ import {HomePage} from "./components/HomePage";
 import {Error} from "./components/Error";
 import {Details} from "./components/Details";
 import {useState} from "react";
+import {AdvancedSearch} from "./components/AdvancedSearch";
 
 function App() {
 
@@ -45,7 +46,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Header search={search}/>}>
                     <Route index element={<HomePage search={search} objectsID={objectsID}/>}/>
-                    <Route path="advanced-search" element={<p>Search</p>}/>
+                    <Route path="advanced-search" element={<AdvancedSearch/>}/>
                     <Route path="details/:id" element={<Details/>}/>
                 </Route>
                 <Route path="*" element={<Error/>}/>
