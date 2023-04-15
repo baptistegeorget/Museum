@@ -5,7 +5,7 @@ import {Searchbar} from "../Searchbar";
 export function Header(props) {
 
     return (
-        <>
+        <div className="container-fluid">
             <div style={{backgroundColor: "#2b2b2b"}} className="row">
                 <div className="col-3 col-md-3 col-lg-3 align-self-center text-center">
                     <a href="/">
@@ -22,6 +22,6 @@ export function Header(props) {
                 </div>
             </div>
             <Outlet/>
-        </>
+        </div>
     )
 }
