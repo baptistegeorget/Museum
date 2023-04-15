@@ -1,16 +1,20 @@
 .list{
     display: flex;
-
     overflow-x: hidden;
-
-
-
-
 }
 
 .list:hover{
     overflow: overlay;
+}
 
+::-webkit-scrollbar{
+    height: 0.5em;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+    background: rgba(0, 0, 0, 0.50);
+    border-radius: 10px;
 }
 
 
