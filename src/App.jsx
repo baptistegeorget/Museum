@@ -44,7 +44,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Header search={search}/>}>
-                    <Route path="/" element={<HomePage search={search} objectsID={objectsID}/>}/>
+                    <Route index element={<HomePage search={search} objectsID={objectsID}/>}/>
                     <Route path="advanced-search" element={<p>Search</p>}/>
                     <Route path="details/:id" element={<Details/>}/>
                 </Route>
