@@ -2,7 +2,6 @@ import {useParams} from "react-router-dom";
 import {OBJECT_URL} from "../../config";
 import {useEffect, useState} from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import style from "../Header/style.module.css";
 
 
 export function Details() {
@@ -29,12 +28,12 @@ export function Details() {
     }
     console.log(object)
     return (
-        <div className="container-fluid" style={{marginTop: "7vh"}}>
+        <div style={{marginTop: "7vh", marginBottom: "2em"}} className="container">
             <div className="row">
-                <div className="col-md-6">
-                    <img w className="col-12 rounded" alt={object?.title} src={`${object?.primaryImage}`}/>
+                <div className="col-md-5">
+                    <img className="w-100 rounded" alt={object?.title} src={`${object?.primaryImage}`}/>
                 </div>
-                <div className="col-md-1"></div>
+                <div className="col-md-2"></div>
                 <div className="col-md-5">
                     <h2 style={{fontSize:"3em"}}>{object?.title}</h2>
                     <p>{object?.creditLine}</p>
